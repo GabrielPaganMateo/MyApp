@@ -1,16 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function useCustomHook() {
-    return useState(1);
+    const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+        setTime(new Date().toLocaleTimeString());
+        }, 1000);
+
+        return () => clearInterval(intervalId); // cleanup
+    }, []);
+
+    return time;
 }
 
 function ComponentWithCustomHook() {
-    const [count, setCount] = useCustomHook();
+    const time = useCustomHook();
 
     return (
         <>
-            <label>Current State: {count}</label><br/>
-            <button onClick={setCount(count + 1)}></button>
+            <label>Current Time: {time}</label><br/>
         </>
     )
 }
