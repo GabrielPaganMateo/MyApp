@@ -1,12 +1,12 @@
 import ClassComponentWithState from './ClassComponentWithState'
-import HookComponent from './HookComponent'
+import FunctionalComponentWithState from './FunctionalComponentWithState'
 import PropsComponent from './PropsComponent'
 
 function App() {
 
   return (
     <>
-      <ClassComponentWithState/>
+      <FunctionalComponentWithState/>
     </>
   )
 }
