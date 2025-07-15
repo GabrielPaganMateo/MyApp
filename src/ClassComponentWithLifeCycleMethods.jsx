@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-class MyComponent extends Component {
+class ClassComponentWithLifeCycleMethods extends Component {
 
     componentDidMount() {
         console.log('Mounted!');
