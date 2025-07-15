@@ -20,6 +20,8 @@ class ClassComponentWithLifeCycleMethods extends Component {
 
 }
 
+export default ClassComponentWithLifeCycleMethods
+
 
 
 
